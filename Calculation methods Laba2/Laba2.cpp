@@ -62,7 +62,7 @@ void print_table(double a, double b, int functionNumber) {
 		double Jh2 = findJ(h / 2.0, n * 2, a, b, functionNumber);
 		double Jh4 = findJ(h / 4.0, n * 4, a, b, functionNumber);
 		double K_delta = (Jh2 - Jh) / (Jh4 - Jh2);
-		double delta_runge = (Jh - Jh2) / (pow(2, k) - 1);
+		double delta_runge = (Jh2 - Jh) / (pow(2, k) - 1);
 		if (functionNumber == 1) {
 			if (n == 1) {
 				prev1_K_delta = K_delta;
