@@ -19,7 +19,7 @@ string doubleToPow10toN(double value) {
     sprintf_s(value_str, "%.2f*10^%+d", value, exponent);
     return string(value_str);
 }
-double findJ(double h, int n, int a, int b, int functionNumber) {
+double findJ(double h, int n, double a, double b, int functionNumber) {
 	double sum1 = 0;
 	double sum2 = 0;
 	for (int i = 1; i < n; i++) {
@@ -37,7 +37,7 @@ double findJ(double h, int n, int a, int b, int functionNumber) {
 	else { J = h / 6.0 * (function2(a) + function2(b) + 2 * sum1 + 4 * sum2); }
 	return J;
 }
-void print_table(float a, float b, int functionNumber) {
+void print_table(double a, double b, int functionNumber) {
 	double prev1_K_delta = 0;
 	double prev2_K_delta = 0;
 	double prev_delta_runge = 0;
@@ -104,7 +104,7 @@ void print_table(float a, float b, int functionNumber) {
 }
 int main() {
 	print_table(0, 1, 1);
-	print_table(0, 1.5, 2);
+	print_table(0.0, 1.5, 2);
 	print_table(0.001, 1.5, 2);
 	return 0;
 }
